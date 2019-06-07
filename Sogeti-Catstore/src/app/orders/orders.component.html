@@ -1,0 +1,32 @@
+<div class="panel-body">
+    
+
+    <div class="row justify-content-center">
+        <div class="col-xs-6">
+            <h4 class="m-b-30 m-t-0">My Ultimate Orders</h4>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Order Name</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let order of myOrders; let i = index">
+                    <td>{{i + 1}}</td>
+                    <td>{{order.id}}</td>
+                    <td>{{order.status}}</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+            <div class="col-xs-6">
+            <button class="btn check btn-primary" (click)="deleteAllMyOrders()">Delete All My Orders</button>
+        </div>
+
+    </div>

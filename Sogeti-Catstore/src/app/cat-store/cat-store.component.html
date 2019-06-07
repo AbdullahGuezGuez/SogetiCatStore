@@ -1,0 +1,78 @@
+<div class="container"> 
+<div class="row">
+
+<div class="col-md-5">
+  <div class="panel panel-primary">
+      <div class="panel-body">
+          <h4 class="m-b-30 m-t-0">The Ultimate Cat Shop</h4>
+          <div class="row">
+              <div class="col-xs-12">
+                  <table class="table table-striped">
+                      <thead>
+                      <tr>
+                            <th>#</th>
+                          <th>Name</th>
+                          <th>Price</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr *ngFor="let cat of catList; let i = index">
+                            <td>{{i + 1}}</td>
+                          <td>{{cat.name}}</td>
+                          <td>{{cat.price}}$</td>
+                          <button class="btn btn-dark waves-effect waves-light btn-rounded" (click)="addCatToList(cat)">Add to cart</button>
+                      </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="col-md-7">
+  <div class="panel panel-primary">
+      <div class="panel-body">
+          <h4 class="m-b-30 m-t-0">Your Ultimate Shopping Cart! $$</h4>
+          <div class="row">
+              <div class="col-xs-12">
+                  <table class="table table-striped">
+                      <thead>
+                      <tr>
+                        <th>#</th>
+                          <th>Name</th>
+                          <th>Price</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr *ngFor="let cat of catListToBuy; let i = index">
+                            <td>{{i + 1}}</td>
+                          <td class="col-md-3">{{cat.name}}</td>
+                          <td>{{cat.price}}$</td>
+                          <button class="btn btn-danger waves-effect waves-light" (click)="removeCatFromList(cat)">Remove</button>
+                      </tr>
+                      <tr>
+                          <td>
+                             Total Cost
+                          </td>
+                          <td>
+
+                          </td>
+                          <td>
+                                {{totalCost}}$
+                            </td>
+                      </tr>
+                      </tbody>
+                  </table>
+
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+ <button (click)="sendOrder()" type="button" class="btn btn-success waves-effect waves-light btn-rounded">Order Now</button>
+</div>
+
+</div>
+
